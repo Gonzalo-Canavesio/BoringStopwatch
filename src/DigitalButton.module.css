@@ -1,0 +1,28 @@
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.root {
+  &[data-variant='digital'] {
+    background-color: transparent;
+    color: var(--mantine-color-digitalRed-6);
+    outline: none;
+  }
+
+  &[data-variant='digital']:not(:focus) {
+    opacity: 0.2;
+  }
+
+  &[data-variant='digital']:focus {
+    animation: blink 1s steps(1, end) infinite;
+  }
+
+}

@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Digital-7';
+    /* The path must point to where the font is served from the public folder */
+    src: url('/fonts/digital-7.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
