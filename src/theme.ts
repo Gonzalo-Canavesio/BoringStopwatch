@@ -30,5 +30,4 @@ export const theme = createTheme({
       classNames: classes,
     }),
   },
-
 });

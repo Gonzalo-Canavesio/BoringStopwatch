@@ -14,7 +14,7 @@ export default function App() {
     preloadSounds();
   }, []);
 
-  return <MantineProvider theme={theme}>
+  return <MantineProvider theme={theme} defaultColorScheme="dark" forceColorScheme="dark">
     {currentPath === "/" && <Home />}
     {currentPath === "/config" && <Config />}
     {currentPath === "/stopwatch" && <Stopwatch />}
