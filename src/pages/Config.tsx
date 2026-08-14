@@ -1,4 +1,4 @@
-import { Button, Flex, Group, NumberInput, Stack, Switch, Text, Title } from "@mantine/core";
+import { Button, Flex, NumberInput, Stack, Switch, Text, Title } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { ConfigValues, STORAGE_KEY, loadConfig } from "../config";
 
