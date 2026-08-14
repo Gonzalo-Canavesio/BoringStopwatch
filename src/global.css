@@ -5,3 +5,9 @@
     font-weight: normal;
     font-style: normal;
 }
+
+html,
+body {
+    touch-action: manipulation;
+    overscroll-behavior: none;
+}

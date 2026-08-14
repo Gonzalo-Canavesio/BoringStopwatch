@@ -1,4 +1,4 @@
-import { Button, Center, Group } from "@mantine/core";
+import { Button, Flex } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { Mode } from "../config";
 import { useGamepad } from "../hooks/useGamepad";
@@ -42,26 +42,32 @@ export default function Home() {
     }, []);
 
     return (
-        <Center bg="black" h="100vh">
-            <Group gap="xl">
-                {MODES.map(({ label, mode }) => (
-                    <Button
-                        key={label}
-                        size="xl"
-                        fz="5rem"
-                        variant="digital"
-                        ref={(ref) => {
-                            if (ref && mode === selected) {
-                                ref.focus();
-                            }
-                        }}
-                        h="auto"
-                        onClick={() => goToStopwatch(mode)}
-                    >
-                        {label}
-                    </Button>
-                ))}
-            </Group>
-        </Center>
+        <Flex
+            bg="black"
+            mih="100dvh"
+            miw="100dvw"
+            gap="xl"
+            justify="center"
+            align="center"
+            direction={{ base: "column", sm: "row" }}
+        >
+            {MODES.map(({ label, mode }) => (
+                <Button
+                    key={label}
+                    size="compact-xl"
+                    fz="clamp(2rem, 8vw, 5rem)"
+                    variant="digital"
+                    ref={(ref) => {
+                        if (ref && mode === selected) {
+                            ref.focus();
+                        }
+                    }}
+                    h="auto"
+                    onClick={() => goToStopwatch(mode)}
+                >
+                    {label}
+                </Button>
+            ))}
+        </Flex>
     );
 }

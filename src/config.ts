@@ -14,8 +14,8 @@ export type ConfigValues = {
 export const STORAGE_KEY = "boring-stopwatch-config";
 
 export const defaultConfig: ConfigValues = {
-    normal: { objetivo: 10, rango: 1, ciego: false },
-    dificil: { objetivo: 10, rango: 1, ciego: false },
+    normal: { objetivo: 10, rango: 0.5, ciego: false },
+    dificil: { objetivo: 10, rango: 1, ciego: true },
 };
 
 export function loadConfig(): ConfigValues {

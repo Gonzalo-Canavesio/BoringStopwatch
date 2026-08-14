@@ -36,6 +36,30 @@
     animation: blink 1s steps(1, end) infinite;
 }
 
+.touchSurface {
+    min-height: 100vh;
+    min-height: 100dvh;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    cursor: pointer;
+}
+
+.timerDisplay {
+    font-size: clamp(4rem, 18vw, 10rem);
+    line-height: 1.1;
+}
+
+.timerResult {
+    font-size: clamp(2.5rem, 9vw, 8rem);
+    line-height: 1.1;
+}
+
+.timerPrompt {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+}
+
 .timerPerfect {
     color: #ffd700 !important;
     animation: goldPulse 1.2s ease-in-out infinite, rainbowHue 3s linear infinite;

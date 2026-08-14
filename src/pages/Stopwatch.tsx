@@ -82,6 +82,14 @@ export default function Stopwatch() {
         }
     };
 
+    const onPointerDown = () => {
+        if (statusRef.current === "stopped") {
+            window.location.href = "/";
+        } else {
+            handleKeyDown();
+        }
+    };
+
     useGamepad({
         onTrigger: () => {
             if (statusRef.current === "stopped") {
@@ -151,16 +159,20 @@ export default function Stopwatch() {
                     : undefined;
 
     return (
-        <Center bg="black" h="100vh">
+        <Center
+            bg="black"
+            className={classes.touchSurface}
+            onPointerDown={onPointerDown}
+        >
             <Stack align="center">
-                <Text size="1.5rem" c="white" ta="center">
+                <Text c="white" ta="center" className={classes.timerPrompt}>
                     Deten el cronometro entre {formatTime(config.objetivo * 1000 - config.rango * 1000)} y {formatTime(config.objetivo * 1000 + config.rango * 1000)}
                 </Text>
-                <Text size="10rem" c="digitalRed.6" className={`${timerClass ?? ""} ${blindClass ?? ""}`}>
+                <Text c="digitalRed.6" className={`${classes.timerDisplay} ${timerClass ?? ""} ${blindClass ?? ""}`}>
                     {formatTime(elapsed)}
                 </Text>
 
-                <Text size="8rem" c="digitalRed.6" ta="center" className={result === "perfect" ? classes.timerPerfect : undefined}>
+                <Text c="digitalRed.6" ta="center" className={`${classes.timerResult} ${result === "perfect" ? classes.timerPerfect : undefined}`}>
                     {result === "perfect"
                         ? "PUNTAJE PERFECTO"
                         : result === "won"
